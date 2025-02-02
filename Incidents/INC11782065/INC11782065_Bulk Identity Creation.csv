@@ -1,0 +1,3 @@
+operation,name,firstname,lastname,email,orgName,type,isRegistered
+CreateIdentity,A1629043,Dan,Vance,Dan.Vance@bestbuy.com,BEST BUY INTERNAL,Sponsor,TRUE
+CreateIdentity,A1629044,Bridget,Davila,Bridget.Davila@bestbuy.com,BEST BUY INTERNAL,Sponsor,TRUE

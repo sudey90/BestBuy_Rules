@@ -1,0 +1,8 @@
+operation,roles,identityName
+RemoveRole,ReSA - View Access,A1367454
+RemoveRole,ReSA - View Access,D532977
+RemoveRole,ReSA - Transaction Edit (Non Sales Audit),C049961
+RemoveRole,ReSA - Transaction Edit (Non Sales Audit),A475620
+RemoveRole,ReSA - View Access,A1009748
+RemoveRole,ReSA - View Access,A972404
+RemoveRole,ReSA - Transaction Edit (Non Sales Audit),A797001

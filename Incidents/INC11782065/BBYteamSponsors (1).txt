@@ -1,0 +1,2 @@
+operation,name,firstname,lastname,email,orgName,type,isRegistered
+CreateIdentity,A3082317,Bhuvani,Dhayalan,bhuvani.dhayalan@bestbuy.com,BEST BUY INTERNAL,Sponsor,true
