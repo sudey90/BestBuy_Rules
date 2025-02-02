@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule created="1733343487287" id="0ad8298d938c114181939352a5375314" language="beanshell" modified="1733349675161" name="BBY - Rule - Transition Workday Report" significantModified="1733349675161">
+  <Description>
+    Reading details of list of terminated users shared by Workday team.
+  </Description>
+  <Signature returnType="String">
+    <Inputs>
+      <Argument name="log">
+        <Description>
+              The log object associated with the SailPointContext.
+            </Description>
+      </Argument>
+      <Argument name="context" type="sailpoint.api.SailPointContext">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="item">
+        <Description>
+          The sailpoint.object.Notifiable to escalate.
+        </Description>
+      </Argument>
+      <Argument name="identity" type="Identity">
+        <Description>
+          The sailpoint.object.Notifiable to escalate.
+        </Description>
+      </Argument>
+    </Inputs>
+  </Signature>
+  <Source>
+  
+  import sailpoint.api.Aggregator;
+  import sailpoint.api.SailPointContext;
+  import sailpoint.api.SailPointFactory;
+  
+  import sailpoint.object.Application;
+  import sailpoint.object.Attributes;
+  import sailpoint.object.ResourceObject;
+  import sailpoint.object.Schema;
+  import sailpoint.object.TaskResult;
+  import sailpoint.object.Custom;
+  import sailpoint.object.EmailOptions;
+  import sailpoint.object.EmailTemplate;
+  import sailpoint.object.EmailFileAttachment;
+  import sailpoint.object.Filter;
+  import sailpoint.object.Identity;
+  import sailpoint.object.LiveReport;
+  import sailpoint.object.QueryOptions;
+  import sailpoint.object.Sort;
+  
+  import java.sql.Connection;
+  import java.sql.Date;
+  import java.sql.DriverManager;
+  import java.sql.PreparedStatement;
+  import java.sql.ResultSet;
+  import java.sql.SQLException;
+  
+  import sailpoint.task.TaskMonitor;
+  import sailpoint.tools.Message;
+  import sailpoint.tools.Util;
+	  
+  import sailpoint.plugin.PluginBaseHelper;
+  import sailpoint.reporting.datasource.JavaDataSource;
+  import sailpoint.task.Monitor;
+  import sailpoint.tools.GeneralException;
+  import org.apache.log4j.Logger;
+  import java.text.SimpleDateFormat;
+	import java.util.Calendar;
+  
+  PreparedStatement InsertStatement = null;
+  PreparedStatement SelectStatement = null;
+  Connection dbConnection = null;
+  ResultSet resultSet = null;
+  
+  String INSERT_STATEMENT = "INSERT INTO DAILY_WORKDAY_TERMINATION_DISCREPANCY_REPORT"+
+    "(USER_NAME,EMPLOYEE_ID,DISPLAY_NAME,WORKER_TYPE,USER_STATUS)"+
+    "VALUES (?, ?, ?, ?, ?)";
+  String SELECT_STATEMENT = "SELECT * FROM DAILY_WORKDAY_TERMINATION_DISCREPANCY_REPORT";
+  
+  List indexColumns = new ArrayList();  
+  List resourceObjects = new ArrayList();
+  File csvFile = null;
+  
+  int lineCount = 0;
+  String line = null;
+  
+  SailPointContext context = SailPointFactory.getCurrentContext();
+  Identity identity;
+  String filePath = "/opt/tomcat/sp/BBY_HR_Workers_Termed_in_Date_Range_and_Eff_Date_Less_than_Completion_Date.csv";
+  
+  public Connection getDBConnection() throws SQLException, GeneralException {
+    if (dbConnection != null @and !dbConnection.isClosed()) {  
+			return dbConnection;
+    }
+		dbConnection = PluginBaseHelper.getConnection();
+    dbConnection.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
+    if (dbConnection == null) {
+			throw new GeneralException("cannot get connection");
+    }
+    return dbConnection;
+	}
+
+  public void closeDBConnection(Connection dbConnection) {
+    try{
+      if (dbConnection != null @and !dbConnection.isClosed())
+        dbConnection.close();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+
+  try{
+    csvFile = new File(filePath);
+    if ((!csvFile.exists())) {
+       System.out.println("Unable to find the bundle csv file: " + filePath);
+       return;
+    }
+    dbConnection = getDBConnection();
+    if (dbConnection != null) {
+      System.out.println("Successfully connected to database!");
+      BufferedReader br = new BufferedReader(new FileReader(filePath));
+      System.out.println("FilePath is ...       "+filePath);
+      System.out.println("INSERT_STATEMENT is "+INSERT_STATEMENT);
+      
+      //SelectStatement = dbConnection.prepareStatement(SELECT_STATEMENT);
+      while ((line = br.readLine()) != null)
+      {
+        System.out.println("line:             " + line);
+        if (lineCount++ == 0){
+          indexColumns = Util.csvToList(line);
+          System.out.println("indexColumns:      " + indexColumns);
+        }
+        else{
+          List record = Util.csvToList(line);
+          System.out.println("record:      " + indexColumns);
+          InsertStatement = dbConnection.prepareStatement(INSERT_STATEMENT);
+          for (int i = 0; i &lt; indexColumns.size(); i++)
+          {
+            String attributeName = indexColumns.get(i);
+            String attributeValue = record.get(i);
+            System.out.println("attributeName ------  " + attributeName + "     attributeValue -------    " + attributeValue);
+
+            System.out.println("i value --------- >>>>>    "+i);
+            InsertStatement.setString(i+1,attributeValue);
+          }
+          System.out.println("Final InsertStatement Result2 --->>>>   " + InsertStatement.getParameterMetaData().getParameterCount());
+          dbConnection.setAutoCommit(false);
+          int rowcount = InsertStatement.executeUpdate();
+          System.out.println("Number of rows updated for sql " + INSERT_STATEMENT + " ------- " + rowcount);
+          dbConnection.commit();
+          InsertStatement.close();
+        }
+      }
+    }
+  }
+  catch (Exception exception) {
+      taskResult.addMessage(new Message(Message.Type.Error, exception));
+      System.out.println("Error occurred while processing orgs: " + exception.getMessage());    
+      return false;
+  }
+  finally{
+    try {
+      // Close db connection
+      if (dbConnection != null @and !dbConnection.isClosed()) {
+        closeDBConnection(dbConnection);
+        System.out.println("Database connection closed.");
+      }
+      // Close prepared statements
+      if (InsertStatement != null) {
+        InsertStatement.close();
+      } 
+      if (SelectStatement != null) {
+        SelectStatement.close();
+      } 
+    } catch (SQLException e) {
+      System.out.println("Error when closing connection: " + e.getMessage());
+    }
+
+    System.out.println("End of Organization Parsing Rule");
+  }
+ return "Success";
+
+</Source>
+</Rule>

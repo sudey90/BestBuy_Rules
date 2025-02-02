@@ -1,0 +1,44 @@
+Jenkins Project to deploy:
+1. Login to https://jenkins-sailpoint.apps.bcp.dc.eptools.bestbuy.com/login?from=%2F
+	1. Login with AID/network password.
+2. Select IIQ_EKSBuild_Pipeline
+3. Make sure branch code is updated with latest webapp codebase
+4. Chose appropriate branch as below,
+	1. For Test - "Branch ekst0_test" --> build now
+	2. For Stage  - "Branch ekst0_stage" --> build now
+	3. For PROD -  "Branch master" --> build now
+ 
+Promote image to EKS:
+After image is created send below message to #help-ops-containers slack channel
+ 
+==================================================
+Prod
+Hi @containerops,Could you please push image from
+image-registry.test.aws.containers.bestbuy.com/sailpoint-sandbox/sailpoint-ekst0-prod:64
+to
+284546904956.dkr.ecr.us-east-1.amazonaws.com/sailpoint/sailpoint-corp
+==================================================
+ 
+==================================================
+Test
+Hi @containerops, could you please push the following images
+image-registry.test.aws.containers.bestbuy.com/sailpoint-sandbox/sailpoint-ekst0-test:55
+to
+588747117733.dkr.ecr.us-east-1.amazonaws.com/sailpoint-test/sailpoint-corp
+==================================================
+
+==================================================
+Stage 
+Hi @containerops, could you please push the following image
+image-registry.test.aws.containers.bestbuy.com/sailpoint-sandbox/sailpoint-ekst0-stage:23
+to
+669410037439.dkr.ecr.us-east-1.amazonaws.com/sailpoint-corp-stage/sailpoint-corp
+==================================================
+ 
+Update image version based on buildah output in Jenkins console. Sample output below,
++ buildah push image-registry.test.aws.containers.bestbuy.com/sailpoint-sandbox/sailpoint-ekst0-test:31
+Getting image source signatures
+
+1. Edit deployments to refresh pods with new system changes like new jar or new html etc..
+	1. kubectl edit deployment sailpoint-ui-corp
+	2. kubectl edit deployment sailpoint-task-corp

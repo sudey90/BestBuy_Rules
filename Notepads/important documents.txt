@@ -1,0 +1,183 @@
+Password Portal Page: https://bbyoig.na.bestbuy.com/password-portal
+GoAlert URL: https://goalert.tools.bestbuy.com/
+Password-Portal: https://passwordportal-stage.bestbuy.com/
+Password-reset-portal: https://forgotpassword-stage.bestbuy.com/
+
+BBY learning URL: https://www.bbylearningnetwork.com/lms/dashboard?task_list_id=required-learning
+BestBuy Web UI: https://bbyoigwebui.na.bestbuy.com/
+ServiceNow URL: https://bestbuy.service-now.com/
+BestBuy Crowd Control: https://code.bestbuy.com/crowdcontrol/
+Wipro Service Now: https://wiprocio.service-now.com/sp
+Wipro Outlook:https://outlook.office365.com/owa/wipro.com
+
+Identity Self Service PL env: https://drl02ggmwb01d:14001/identity/ (a3076068_PL_ADMIN)
+Identity Self Service prod env: https://pdl01ggmap01a:14001/identity/ (a3076068_OIG_ADMIN	)
+Identity Self Service Test env: https://ptl01ggmap01c:14001/identity/ (OIGADMIN)
+
+Weblogic Server Admin Console PL env: https://drl02ggmwb01d:7002/console
+Weblogic Server Admin Console Prod env:https://pdl01ggmap01a:7002/console
+Weblogic Server Admin Console LEAM env:https://pdl01ggmap03a:7002/console
+Vendor WebLogic : https://pdl01fbhap011.bbydmz.com:7002/console
+Vendor PL console: https://drl02fbhap001.bbydmz.com:7002/console/
+
+Oracle Identity System Admin PL env: https://drl02ggmwb01d:14001/sysadmin
+
+SailPoint URL prod: https://identity-ent.us.bestbuy.com/identityiq
+SailPoint URL stage: https://identity.stage.bestbuy.com/identityiq
+SailPoint URL test: https://identity.test.bestbuy.com/identityiq
+SailPoint URL Prod: https://sailpointstage.t0.stage.ks.bestbuy.com/identityiq/
+
+cyberark URL prod: https://puam.na.bestbuy.com/
+cyberark URL pl: https://puampl.na.bestbuy.com/PasswordVault/v10/logon
+PL CyberArk : https://puam-pl2.na.bestbuy.com/PasswordVault/v10/Accounts
+
+AWS URL: https://bby-sso.awsapps.com/start/#
+Workday URL: https://www.myworkday.com/bestbuy/d/search.htmld?q=1628718&state=searchCategory-all%3Adefault
+JIRA URL : https://jira.tools.bestbuy.com/secure/Dashboard.jspa
+
+Jenkins URL: https://jenkins-sailpoint.apps.bcp.dc.eptools.bestbuy.com/login?from=%2F
+GitHub URL: https://github.com/bby-corp/sailpoint-iga-corp/tree/ekst0_stage
+Timesheet URL : https://bestbuy.pvcloud.com/planview/Track/Time/PickPeriod?resourceCode=120993
+
+LEAM Details
+----------------------
+sysadmin: https://PDL01GGMAP03A.na.bestbuy.com:14001/sysadmin
+Console: http://PDL01GGMAP03A.na.bestbuy.com:7001/console
+Admin Portal: https://pdl01ggmap03a.na.bestbuy.com:14001/identity/
+
+SailPoint Vendor Identity Portal
+------------------------------------
+SailPoint Vendor Stage URL: vendoridentity.stage.bestbuy.com/identityiq
+SailPoint Vendor Prod URL: https://vendoridentity.us.bestbuy.com/identityiq
+Architecture diagram : https://code.bestbuy.com/wiki/display/IAM/SailPoint+Architecture
+
+Kibana URL -- 
+https://kibana.prod.monitoring.bestbuy.com/s/sailpoint-iiq/app/discover#/view/f5f5baa3-4b99-458b-aa5f-b501da8f1bf5?_g=(filters:!(),refreshInterval:(pause:!t,value:60000),time:(from:now-15m,to:now))&_a=(breakdownField:message.keyword,columns:!(message,kubernetes.pod.name),filters:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'1a1b4b80-bda0-4514-9562-03b7fee1ba57',key:kubernetes.namespace.keyword,negate:!f,params:(query:sailpoint-corp),type:phrase),query:(match_phrase:(kubernetes.namespace.keyword:sailpoint-corp))),('$state':(store:appState),meta:(alias:!n,disabled:!f,field:kubernetes.pod.name,index:'1a1b4b80-bda0-4514-9562-03b7fee1ba57',key:kubernetes.pod.name,negate:!f,params:!(sailpoint-ui-corp),type:phrases,value:!(sailpoint-ui-corp)),query:(bool:(minimum_should_match:1,should:!((match_phrase:(kubernetes.pod.name:sailpoint-ui-corp))))))),grid:(),hideChart:!t,index:'1a1b4b80-bda0-4514-9562-03b7fee1ba57',interval:auto,query:(language:kuery,query:'message%20:%20Inside'),sort:!(!('@timestamp',desc)))
+
+https://kibana.prod.monitoring.bestbuy.com/s/cpe-eks/app/discover#/?_g=(filters:!(),refreshInterval:(pause:!t,value:60000),time:(from:now-15m,to:now))&_a=(columns:!(),filters:!(),index:'27baa2a3-e01b-4ffc-8e7b-3616ec9fc75f',interval:auto,query:(language:kuery,query:''),sort:!(!('@timestamp',desc)))
+
+Create AD account in SNOW --
+https://bestbuy.service-now.com/now/nav/ui/classic/params/target/com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D3c1ed18d1bc378145a1e10a41a4bcb5a%26sysparm_link_parent%3D276760e5db8a9050acdd6ce2ca96190c%26sysparm_catalog%3De0d08b13c3330100c8b837659bba8fb4%26sysparm_catalog_view%3Dcatalog_default%26sysparm_view%3Dcatalog_default
+
+Create AD NAQA account in SNOW--
+https://bestbuy.service-now.com/now/nav/ui/classic/params/target/sc_req_item.do%3Fsys_id%3D6ba109b693f51a10a50e3fcdfaba101c%26sysparm_record_target%3Dsc_req_item%26sysparm_catalog%3De0d08b13c3330100c8b837659bba8fb4%26sysparm_catalog_view%3Dcatalog_default
+
+SailPoint Dynatrace -- https://oqh26880.live.dynatrace.com/#dashboard;id=a6755d8a-5393-4e67-a0fe-222e0d2ef574;applyDashboardDefaults=true
+OIG Dynatrace -- https://oqh26880.live.dynatrace.com/#dashboard;gtf=-30m;gf=all;id=24636508-410b-4a94-9c42-20b464ddb048
+Intake URL -- https://code.bestbuy.com/wiki/display/IC/General+Infrastructure+Intake
+Aid in CyberArk -- https://bestbuy.service-now.com/now/nav/ui/classic/params/target/com.glideapp.servicecat[…]g_view%3Dcatalog_default%26sysparm_view%3Dcatalog_default
+
+sudo command for vendor server: sudo su - oimprods
+sudo command for corp server: sudo su - prodoim
+sudo command for corp pl server: sudo su - ploim
+connecting to a different server inside jump server: ssh A3076068-a@<<server name>>
+
+
+Path to start/stop servers: /opt/oracle/PL/Middleware/user_projects/domains/oim_domain/bin
+command to start server: nohup ./startManagedWebLogic.sh &
+Path to check logs: /opt/oracle/PL/Middleware/user_projects/domains/oim_domain/servers/oim_server1/logs
+Path to check logs in LEAM: /opt/oracle/Middleware/user_projects/domains/PPP_OIMDomain/servers/oim_server1/logs
+command to check logs: tail -f oim_server1.out
+command to enter the pl server using sudo: sudo su - ploim (if using DRL)
+command to enter the prod server using sud: sudo su - prodoim (if using PDL)
+command to enter the test server using sud: sudo su - testoim
+
+Kibana Query ------ https://bestbuy.sharepoint.com/sites/IdentityGovernance/Shared%20Documents/Forms/AllItems.aspx?viewid=0952940a%2D24a4%2D4bed%2Da233%2D4f3e7fd9e681
+
+IM wiki page --- https://code.bestbuy.com/wiki/display/IAM
+Holiday Concierge Calendar --  https://code.bestbuy.com/wiki/calendar/spacecalendar.action?spaceKey=IDAM
+https://code.bestbuy.com/wiki/display/IAM/Sailpoint+IIQ+EKS+Environment+Build+Steps+Document+-+Draft
+https://code.bestbuy.com/wiki/display/IAM/SailPoint+Workday+Deployment+Timelines
+https://code.bestbuy.com/wiki/display/IAM/SailPoint+Architecture
+Intake form - https://code.bestbuy.com/wiki/display/IC/General+Infrastructure+Intake
+https://code.bestbuy.com/wiki/display/IAM/EKS+Tier0+Kubernetes+Access+via+SSH+Bastion
+https://bbyoam.na.bestbuy.com/OAMLogin/LEAMLogin.jsp?resource_url=https%3A%2F%2Fleam.na.bestbuy.com%252Fidentity%3F%2526end_url%253D%252Fidentity%252Flogout%253FOIM_CSRFTOKEN%253Doim_token_-4888547385555505450
+SailPoint Guide:- https://code.bestbuy.com/wiki/display/IAM/SOP+-+Access+Request+and+Approvals+in+SailPoint
+aws sso login page -- https://code.bestbuy.com/wiki/pages/viewpage.action?pageId=743871784
+Discrepancy fix queries - https://code.bestbuy.com/wiki/display/IAM/Work+Aids+for+Identity+Reconciliations
+kibana log setup --- https://code.bestbuy.com/wiki/display/IAM/SOP+-+IGA+Monitoring
+Automation link --- https://bestbuy-my.sharepoint.com/:x:/r/personal/a1357078_bestbuy_com/Documents/Microsoft%20Teams%20Chat%20Files/IDAM_F25_Automation_Oppurtunities.xlsx?d=wa5f0d7f20a57489d9996b2e0cf3b9afd&csf=1&web=1&e=ZPT3EB
+Risk Share Link ---- https://bestbuy.sharepoint.com/sites/HolidayConsolidatedCommandandControl3C/Shared%20Documents?RootFolder=%2Fsites%2FHolidayConsolidatedCommandandControl3C%2FShared%20Documents%2FIDAM%20War%20Room%2FFY23%20Holiday
+New Password Portal document ---- https://sn.bestbuy.com/cp?id=nr_kb_article&sysparm_article=KB0219207
+IDAM Team contact list --- https://bestbuy.sharepoint.com/:x:/r/sites/HolidayConsolidatedCommandandControl3C/Shared%20Documents/IDAM%20War%20Room/FY25%20Holiday/IDAM%20Team%20Contacts%20list.xlsx?d=w607541cf31ee4cd99121578fe73d9561&csf=1&web=1&e=xVpLSQ
+DLG link ----- https://wipro365.sharepoint.com/sites/BBYWiproAutomationsandDLGs/Shared%20Documents/Forms/AllItems.aspx?noAuthRedirect=1
+IG documentation sharepoint ------ https://bestbuy.sharepoint.com/sites/IdentityGovernance/Shared%20Documents/Forms/AllItems.aspx?viewid=0952940a%2D24a4%2D4bed%2Da233%2D4f3e7fd9e681
+Holiday Readiness documents to update ------- https://bestbuy.sharepoint.com/sites/ITOps/ITApplicationDocumentRepository/Lists/Status/AllItems.aspx#InplviewHash87a1bd8e-3409-4219-a0c6-8bb7326eadaf=SortField%3DApplication_x0020_Name-SortDir%3DAsc-FilterField1%3DService%255Fx0020%255FManager-FilterValue1%3DWillenbring%252C%2520Kim
+SNOW RITM creation link ------- https://bestbuy.service-now.com/com.glideapp.servicecatalog_cat_item_view.do?v=1&sysparm_id=2d5e99dd1b772850a9d3a643b24bcb61&sysparm_link_parent=afc815c94f61d3008b50a50f0310c7cd&sysparm_catalog=e0d08b13c3330100c8b837659bba8fb4&sysparm_catalog_view=catalog_default&sysparm_view=text_search
+Service Accounts ------- https://bestbuy.sharepoint.com/:x:/r/sites/IdentityGovernance/_layouts/15/Doc.aspx?sourcedoc=%7B83178141-3EA1-4352-8655-C7C50587B96C%7D&file=IG_SA_Certs1.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&wdOrigin=TEAMS-MAGLEV.undefined_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1733515734426&web=1
+
+Automation SharePoint Link
+=====================
+Workday-SailPoint integration wiki: https://code.bestbuy.com/wiki/display/IAM/SailPoint+IIQ+-+Workday+Integration#SailPointIIQWorkdayIntegration-TransactinglocationlogicinSPforRSS:
+https://urldefense.com/v3/__https:/apc01.safelinks.protection.outlook.com/ap/x-59584e83/?url=https*3A*2F*2Fbestbuy.sharepoint.com*2F*3Ax*3A*2Fr*2Fsites*2FWIAM*2FIdentity*2520and*2520Access*2520Management*2520Services*2FIDAM*2FIDAM*2520Automation*2FFY24*2520IDAM_Automation_Opportunities.xlsx*3Fd*3Dw15c87ff2099f4f28b36c3a1f391aabf5*26csf*3D1*26web*3D1*26e*3DVJklOA&data=05*7C01*7Cganesh.mallaiah*40wipro.com*7C05f556d382dd463c7f1208dad9c93ecc*7C258ac4e4146a411e9dc879a9e12fd6da*7C1*7C0*7C638061755769824042*7CUnknown*7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0*3D*7C3000*7C*7C*7C&sdata=8c72er0rVAD1CXb7uX4HQo56IIHCPLgm3zGteIwpRc4*3D&reserved=0__;JSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJQ!!KtbpKd1p8A!ozb4smOe8Guzsc38-fFA0DBNrlrzH6DpIMxYJfEakl6M_-2RaHkaa5saXIarY-xk2nTlLPpSqZss_ZzuaXAQ-AgknfTxXXziWZo$
+
+-A account creation link
+==================
+https://bestbuy.service-now.com/now/nav/ui/classic/params/target/com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D3c1ed18d1bc378145a1e10a41a4bcb5a%26sysparm_link_parent%3D276760e5db8a9050acdd6ce2ca96190c%26sysparm_catalog%3De0d08b13c3330100c8b837659bba8fb4%26sysparm_catalog_view%3Dcatalog_default%26sysparm_view%3Dcatalog_default
+
+Add/Remove user in/from AD group
+=======================
+https://bestbuy.service-now.com/now/nav/ui/classic/params/target/com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D2688b1cd47651d94a980bda5536d435f%26sysparm_link_parent%3D276760e5db8a9050acdd6ce2ca96190c%26sysparm_catalog%3De0d08b13c3330100c8b837659bba8fb4%26sysparm_catalog_view%3Dcatalog_default%26sysparm_view%3Dtext_search
+
+BBY Rule AD Account Update -- to update the UPN details of user in AD
+BBY Rule Identity Application Password Update -- to repush the password in downstream app
+BBY Password Warning Rule -- Password expiration notification
+BBY Rule Identity Account Enable And Disable -- To enable/Disable account
+BBY Rule Identity Application Account Update -- To enable/disable account
+ADBulkAggregation
+BBY Password Reset Statistics Report New -- Sabitha (password Reset Statistics Report)
+OIM Weekly Password Expiry Notification for Loc
+RUle-AD*
+BBY Password Expiry attribute sync
+Rule : Test SAB Report Rule
+
+We can get Schema attribute details from below rules:
+------------------------------------------------------------
+BBY IIQ - Workday Email Synchronization Rule
+BBY JDBC Provisioning Rule
+
+Stage:
+sailpoint-bastion-1 i-0ff100e879cd083cf
+sailpoint-bastion-2 i-07d241fd68a15a929
+Test:
+i-0fcd51080d37412e9
+i-02b7dfa4f15e14d2e
+
+KB Articles
+=============
+1. https://bestbuy.service-now.com/kb_view.do?sysparm_article=KB0075800 -- Account Unlock
+2. https://bestbuy.service-now.com/kb_view.do?sysparm_article=KB0210517 -- PingID registration
+3. https://bestbuy.service-now.com/kb_view.do?sysparm_article=KB0215621 -- Create NAQA account similar to AID
+4. https://bestbuy.service-now.com/kb_view.do?sysparm_article=KB0223621 -- Create Test Account in SP stage
+
+Important logger to enable for checking webservice connection
+---------------------------------------------
+logger.connector_ws.name = connector.sdk.webservices.ExecutionMediator
+logger.connector_ws.level = trace
+ 
+logger.connector_wdreq.name = openconnector.connector.workday.requests
+logger.connector_wdreq.level = trace|
+ 
+logger.connector_wd.name = openconnector.connector.WorkDay
+logger.connector_wd.level = debug|
+ 
+logger.connector_wdite.name = openconnector.connector.workday.iterator
+logger.connector_wdite.level = info|
+ 
+logger.connector_wdutil.name = openconnector.connector.workday.utility.WorkDayCommonHelperUtility
+logger.connector_wdutil.level = debug|
+ 
+logger.connector_wdaccsrv.name = openconnector.connector.workdayaccounts.WorkdayAccountsService
+logger.connector_wdaccsrv.level = trace
+
+
+For any LEAM request in Slack
+----------------------------------
+Please Note:- Accounts created in the old LEAM will not be available in SailPoint. You are required to create new accounts in SailPoint.
+All password management is moving to Cyberark.  The new LEAM process which is in sailpoint will use Cyberark for password management.
+Please use this SNOW form to request a new primary account in NAQA. This will verify the account and on-board it to CyberArk.
+Please find the SailPoint LEAM wiki link to manage test accounts and also existing Primary accounts.
+https://code.bestbuy.com/wiki/display/IAM/SailPoint+LEAM
+
+
+1116 -> Enter

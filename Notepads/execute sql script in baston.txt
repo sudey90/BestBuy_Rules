@@ -1,0 +1,24 @@
+- access AWS mgmt console
+https://bby-sso.awsapps.com/start
+- Please change the location "N. Virgina"
+- Go to EKST0_Dev_ReadOnly --> Management console
+- search EC2 --> instances -->select instance (ekst0_app_bastion) --> connect -->sessionmanager
+- update tnsnames.ora with stage DB info under /opt/oracle/client/19.3.0/network/admin/tnsnames.ora
+- export ORACLE_HOME="/opt/oracle/client/19.3.0" to run sqlplus command
+command path: /opt/oracle/client/19.3.0/bin
+command ./sqlplus identityiq/identityiq@<tnsnames.ora entry for stage DB>
+eg for corpt test
+./sqlplus identityiq/identityiq@corptest
+/opt/oracle/client/19.3.0/bin/sqlplus identityiq/identityiq@spcorp
+eg in stage (Need to update DB username and password)
+./sqlplus identityiq/identityiq@oq01spdb,oq01spdb.world or oq02spdb,oq02spdb.world
+od02spdb.c3kjzsynv6ds.us-east-1.rds.amazonaws.com:1521:od01spdb
+- Use add_identityiq_extensions_oracle.sql to update new sql ddls and run
+- Restart tomcat after DB and SP object mapping (identity mapping) completion
+ 
+export ORACLE_HOME="/opt/oracle/client/19.3.0"
+/opt/oracle/client/19.3.0/bin/sqlplus identityiq/identityiq@spcorp
+export ORACLE_HOME="/opt/oracle/client/19.3.0"
+/opt/oracle/client/19.3.0/bin/sqlplus identityiq@spcorp
+Stage:z5026lqd&zs8ok(vecax (now same like test)
+has context menu

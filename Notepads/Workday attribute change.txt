@@ -1,0 +1,8 @@
+https://code.bestbuy.com/wiki/display/IAM/SailPoint+IIQ+-+Workday+Integration#SailPointIIQWorkdayIntegration-TransactinglocationlogicinSPforRSS:
+
+1. Extend AD schema
+	Update AD application definition
+2. Update SPCONF custom object
+Updated IIQ Identity configuration (IIQ schema), identity mapping, UI configuration (identity view attributes)
+Extended IIQ schema, AD schema
+Updated WD  application definition

@@ -1,0 +1,618 @@
+Hi @Randy Lloyd,
+
+Mail is undeliverable. Contact your VSA to register new account.
+
+Regards,
+Vendor Identity Support
+
+Hi,
+
+Kindly clear cache and ask user manager (Ford, James A1043122) to pull the password for the user from
+Path:- https://bbyoig.na.bestbuy.com/password-portal--> click on Retrieve New Hire Password--->pull the password for the user.
+
+Once temp password retrieve reset it into permanent one.
+Steps to follow:
+1. Login to IAM password portal - https://bbyoig.na.bestbuy.com/password-portal
+2. With your AID and temporary password
+3. It will redirect you to reset password. Post reset completion, you will be able to login to applications.  
+
+Revert back to us with error screenshot if you still face any issue.
+
+Regards,
+IG Team.
+
+
+
+if pw is not in sync with downstream applications:-
+==================================================
+Hi,
+We could see user's password is not in sync with downstream applications, kindly reset your password again through password portal - https://bbyoig.na.bestbuy.com/password-portal.
+Kindly let us know if still user face any issues.
+Regards,
+OIG Support
+
+
+
+if temp pw was retrieved but permanent pw not set:-
+=================================
+Hi,
+We could see user temp password has been retrieved by helpdesk admin, Kindly reset the temp password to permanent one.
+Steps to follow:
+1. Login to IAM password portal - https://bbyoig.na.bestbuy.com/password-portal
+2. With your AID and temporary password
+3. It will redirect you to reset password. Post reset completion, you will be able to login to applications.
+
+Let us know if you still face any issues with screenshot.
+
+Regards,
+OIG Support
+
+Note: If 24hours is already over since the temporary password has been received, then kindly ask HD team to generated another temporary password
+
+Password reset :-
+===========================
+
+Hi,
+We could see password has expired for the user, login to https://passwordportal-us.bestbuy.com to reset ,use Forgot/Expired Password link which will give further options as listed below to reset the password
+a) Password Reset Pin + Time Based Passcode
+b) Security QA
+c) Current Expired Password + Time Based Passcode
+d) Manager Approval
+or Contact helpdesk to reset password
+Let us know if you still face any issues with screenshot.
+
+We have enabled the new password policy which restricts the use of any banned password to make Bestbuy more secure and we are not sure about the restricted word/pattern available in Active Directory, only Microsoft is aware of those patterns. Can you please try with a new password which should not contain any banned dictionary word like Welcome, Temp, Password, qwerty, asdfg, zxcvb, BestBuy etc(This is our expectation, we are not 100% sure which password will be accepted and which won't), Also please do not use your previous 6 password.
+
+Regards,
+IDAM Support
+
+Password successfully reset and closing ticket:-
+================================================
+Hi,
+We could see user have done a successful password reset and it is in sync with all downstream applications.
+Please find below status:
+
+Account	Account Status	Last Password Updated Timestamp	Password Change On Next Login
+OUD	UNLOCKED	2024-01-30 17:28:21 CST	FALSE
+AD	UNLOCKED	2024-01-30 17:28:26 CST	FALSE
+
+Hence closing the ticket as issue resolved, feel free to open new one if problem persists
+
+Regards,
+IDAM Support.
+
+VOIM:-
+===============
+Hi Stephanie,
+We could see you have done a successful password reset on 11-JAN-2022 13:38:20 and its completed.
+Hence resolving the ticket after third reminder. Kindly contact VendorIdentitySupport@bestbuy.com or raise a new ticket if you still have any other concerns.
+Thanks,
+OIG Team.
+
+pw is in sync and closing ticket:-
+=================================
+
+Hi,
+We could see user have done a successful password reset and it is in sync with all downstream applications.
+Please find below status:
+
+
+Hence closing the ticket after third reminder, feel free to open new one if problem persists
+Regards,
+OIG Team.
+
+Hi,
+We could see user have done a successful password reset and it is in sync with all downstream applications.
+Please find below status:
+
+
+
+Hence resolving the incident as we have provided resolution, for any other issues feel free to raise new incident
+Regards,
+OIG Team.
+
+Ask user to change temp PW to permanent:-
+========================================
+Hi,
+We have checked and updated user profile
+Kindly ask user manager to retrieve the temp password and reset the temp password to permanent one through password portal - https://bbyoig.na.bestbuy.com/password-portal.
+
+Let us know still if user face any issues with error screenshot.
+
+Regards,
+OIG Support
+
+
+Hi,
+We have checked and updated the user profile. Kindly try to retrieve the temp password for the impacted user.
+
+
+Ticket closing statement.
+=========================
+Hence resolving the ticket after third reminder. Kindly contact OIMWIPROSupport@bestbuy.com or OIMSupport@bestbuy.com for further concern
+
+
+
+
+if pw is resetted after inc creation and pw is in sync
+=================================================
+
+Hi,
+We could see user have done a successful password reset and it is in sync with all downstream applications.
+Please find below status:
+Account Account Status Last Password Updated Timestamp Password Change On Next Login
+OUD UNLOCKED 2022-04-10 13:35:54 CDT FALSE
+AD UNLOCKED 2022-04-10 13:35:59 CDT FALSE
+Let us know still user face any issues with error screenshot.
+Regards,
+OIG Support.
+
+
+pwd retrival is done , inc created after pw retrival, and 1st time pw is not working
+====================================================================================
+
+Hi
+Kindly follow the below steps :
+A.Windows reset ctrl+alt+del or through password portal with manager's help
+or
+B.Secureauth reset
+1. Launch the "SecureAuth Authenticate" mobile app from your smartphone.
+2.Click on the '+' icon and choose to connect with Web URL and enter the following URL - https://mfa1.bestbuy.com
+3.Enter your AID that was provided by your manager as username and click Submit.
+4.Choose the SMS/Text Option to send a one-time passcode to your pre-registered mobile number.
+NOTE: If you don't see the SMS/Text option, please contact your manager for assistance for registering your phone number and re-start the soft-token registration process. Do not choose or contact the BBY Helpdesk to receive your one-time passcode.
+Enter the one-time passcode you received as text message on your mobile and Submit.
+5.Enter the temporary password provided by your Manager and also change your password to complete the soft-token registration and password reset process.Kindly let us know still user face any issues.
+Regards,
+OIG Support
+
+Rehire Flag
+to check:-  select usr_change_pwd_at_next_logon, usr_udf_isuserresetqa from usr where usr_login in ('A1642853');
+
+Update sec Q & A, change pwd at next logon Flag for users who has not done password reset:-
+
+update usr set usr_change_pwd_at_next_logon=1, usr_udf_isuserresetqa=3 where usr_login in ('user login'); 
+
+if oiminternal entry found:-
+delete from user_pwd_reset_mechanism where usr_pwd_reset_key in ('2612160','2612143');
+
+select USR_CHANGE_PWD_AT_NEXT_LOGON,USR_UDF_NEWHIREFLAG from USR
+
+if manager unable to retrieve 1st time pwd
+===========================================
+
+Select usr.USR_KEY, usr.USR_LOGIN,usr.USR_FIRST_NAME, usr.USR_LAST_NAME, usr.USR_UDF_JOBTITLE, usr.USR_PASSWORD,
+to_char(USR.USR_UDF_EFFECTIVESTARTDATE,'DD-Mon-YYYY') AS USR_UDF_EFFECTIVESTARTDATE,(CASE WHEN usr.usr_udf_effectivestartdate <= SYSDATE
+THEN 'true' ELSE 'false' END) AS PWDRET_FLAG,
+(CASE WHEN usr.USR_LOCKED = 0 THEN 'no' ELSE 'yes' END) AS USR_LOCKED, (CASE WHEN usr.USR_UDF_ISUSERRESETQA='3'
+THEN 'Rehire' ELSE 'Newhire' END) AS HIRE_TYPE, usr.usr_created,usr.USR_UDF_ISUSERRESETQA,usr.usr_change_pwd_at_next_logon,
+mgr.usr_login as MGRID,mech.usr_login AS MECH_USR_LOGIN,count(mech.reset_mechanism),listagg(mech.reset_mechanism,'|')
+within group (order by mech.USR_PWD_RESET_KEY desc) as MECHANISM from usr usr inner join usr mgr on mgr.usr_key=usr.usr_manager_key
+left outer join user_pwd_reset_mechanism mech on mech.usr_login=usr.usr_login where UPPER(mgr.usr_login)=UPPER('A754430')
+and usr.USR_STATUS='Active' and (usr.USR_UDF_ISUSERRESETQA='0' or usr.USR_UDF_ISUSERRESETQA is null or usr.USR_UDF_ISUSERRESETQA='3')
+and usr.usr_change_pwd_at_next_logon=1 and usr.USR_EMP_TYPE not in('Service Account') and usr.USR_LOGIN not in (select GKS_NH_USER_ID
+from geeksquad_transactions) group by usr.USR_KEY, usr.USR_LOGIN,usr.USR_FIRST_NAME, usr.USR_LAST_NAME,
+usr.USR_PASSWORD,usr.usr_udf_effectivestartdate,usr.usr_created,usr.USR_UDF_ISUSERRESETQA,usr.usr_change_pwd_at_next_logon,usr.USR_LOCKED,
+mgr.usr_login,mech.usr_login, usr.USR_UDF_JOBTITLE ORDER BY usr.USR_FIRST_NAME ASC;
+
+
+if everything is good
+=======================
+
+Hi,
+
+Kindly clear cache and try to pull the password for the user from
+Boston	Viens	A160343	MGR ASST, STORE SALES - 000539-ANCHORAGE-MANAGEMENT
+Path:- https://bbyoig.na.bestbuy.com/password-portal--> click on Retrieve New Hire Password--->pull the password for the user.
+Revert back to us with error screenshot if you still face any issue.
+
+Regards,
+OIG Support
+
+Hi,
+We have checked and updated the user Profile. Kindly try to login to the application and let us know if user still face any issues.
+or
+kindly reset your password again through password portal - https://bbyoig.na.bestbuy.com/password-portal and try to login to the applications.
+Regards,
+OIG Support
+
+EBS user
+
+Hi,
+We could see password is not sync with EBS ,Kindly reset your password using https://bbyoig.na.bestbuy.com/password-portal/ following below mentioned policy
+
+1) Minimum 8 characters and maximum 30 characters.
+2) At least one lower case letter, one upper case letter and one number.
+3) Must begin with an alphabet (a-z or A-Z).
+4) The password should contain characters from at least three of following five categories
+a. English Uppercase Characters (A-Z)
+b. English Lowercase Characters (a-z)
+c. Base 10 Digits (0-9)
+d. Unicode Characters
+e. No spaces are allowed
+f. Non-alphanumeric (for example: !, $, # or ^)
+5) Password must not have adjacent repeating characters like aa, Aa, $$, 22.
+6) There should be one special characters - $ or # (only accepted).
+7) At least 1 number.
+8) The password should not contain employee number, first name, middle name or last name.
+9) More than 2 special characters are not allowed.
+
+Please note if you are a Mac user should use enterprise connect to reset the password and adhere to the password policy mentioned.
+OIG Support
+
+
+New hire Password Reset
+=======================
+Hi
+Kindly follow the below steps :
+A.Windows reset ctrl+alt+del or through password portal with manager's help
+or
+B.Secureauth reset
+1. Launch the "SecureAuth Authenticate" mobile app from your smartphone.
+2.Click on the '+' icon and choose to connect with Web URL and enter the following URL - https://mfa1.bestbuy.com
+3.Enter your AID that was provided by your manager as username and click Submit.
+4.Choose the SMS/Text Option to send a one-time passcode to your pre-registered mobile number.
+NOTE: If you don't see the SMS/Text option, please contact your manager for assistance for registering your phone number and re-start the soft-token registration process. Do not choose or contact the BBY Helpdesk to receive your one-time passcode.
+Enter the one-time passcode you received as text message on your mobile and Submit.
+5.Enter the temporary password provided by your Manager and also change your password to complete the soft-token registration and password reset process.
+Kindly let us know still user face any issues.
+
+Regards,
+OIG Support
+
+
+Leam pw reset:-
+
+You can change your lower environment password through LEAM:
+Go to: Login target="_blank">https://leam.na.bestbuy.com/identity
+Login using your Production A-ID and Password.
+Click My Access.
+Select the account you want to password reset.
+Click Reset Password.
+Type New Password and Submit.
+
+Password expiry date query
+==========================
+select usr_login,usr_pwd_expire_date from usr where usr_login in ('A1020833');
+
+
+select * from bby_pwrp_security_code where sc_usr_login='A1571470';        cud see manager approval code is being generated
+
+select usr_login,usr_status, usr_email, usr_pwd_expire_date from usr where usr_login in ('VG499843');
+
+select * from fgt_pwd_det where usr_login= 'VM754528' order by create_date desc;
+
+and need to check the oud latest password update task completed r not
+
+fgt_pwd_det
+usr_inv_det
+
+
+We could see that the password reset process is still in ‘Pending state’. Please check all the folders in the registered email id William.Carlson@bdsmktg.com for the mail from @VendorIdentitySupport with the reset details and complete the process.
+Please let us know if you are still facing any issues.
+
+Vendor pwd reset:-
+
+Please follow the below steps to reset your password,
+1.Click on the "Forgot Password" link. (https://access.bestbuy.com/vportal ) 
+2.Provide your registered email id in "Forgot Password" window. 
+3.A link will be email-ed to your registered e-mail to reset the password. Reset your password by clicking on the link[Note: Password must not be any of the last 6 passwords] . 
+4.After resetting, verify your new credential in a new Incognito window(chrome) or in a new browser session after clearing all the system cache & browser history.
+
+Let us know if still user face any issues with error screenshot.
+
+Regards,
+Vendor Identity Support
+
+
+
+SELECT USR_LOGIN, USR_STATUS, USR_CREATE, USR_UPDATE, USR_UDF_EFFECTIVESTARTDATE FROM USR 
+WHERE USR_LOGIN IN (SELECT USR.USR_LOGIN FROM USR 
+WHERE USR.USR_STATUS = 'Active' AND  USR.USR_UDF_HRSOURCE IS NOT NULL 
+AND USR.USR_EMP_TYPE  NOT IN  ('Board of Directors', 'Ex-Board of Director') 
+AND USR.USR_LOGIN NOT IN ('OIM_AD_PASS_SYNC_NEW','JESUS1.PEREZ@ORACLE.COM','OIMADMIN','CAPLUG','BBY-S-OIGWEBUI-NA')
+MINUS 
+(SELECT UPPER(USR.USR_LOGIN) FROM OST, OIU, ORC, USR, OBJ, PKG, APP_INSTANCE 
+WHERE OIU.OST_KEY = OST.OST_KEY AND OIU.ORC_KEY = ORC.ORC_KEY 
+AND OIU.APP_INSTANCE_KEY = APP_INSTANCE.APP_INSTANCE_KEY AND ORC.USR_KEY = USR.USR_KEY 
+AND OST.OBJ_KEY = OBJ.OBJ_KEY AND ORC.PKG_KEY = PKG.PKG_KEY 
+AND APP_INSTANCE.APP_INSTANCE_DISPLAY_NAME IN ('ActiveDirectoryAsia','ActiveDirectoryNA') 
+AND OST.OST_STATUS IN ('Provisioned','Enabled'))) 
+ORDER BY USR_CREATE DESC;
+
+SELECT APP_INSTANCE.APP_INSTANCE_NAME, OBJ.OBJ_NAME, USR.USR_STATUS, USR.USR_LOGIN, USR.USR_KEY, OBJ.OBJ_KEY,
+OIU.ACCOUNT_TYPE, PKG.PKG_KEY, PKG.PKG_NAME, OST.OST_STATUS, ORC.ORC_KEY, USR.USR_CREATE, OIU.OIU_KEY
+FROM OST, OIU, ORC, USR, OBJ, PKG, APP_INSTANCE
+WHERE OIU.OST_KEY = OST.OST_KEY AND OIU.ORC_KEY = ORC.ORC_KEY AND OIU.APP_INSTANCE_KEY = APP_INSTANCE.APP_INSTANCE_KEY
+AND ORC.USR_KEY = USR.USR_KEY AND OST.OBJ_KEY = OBJ.OBJ_KEY AND ORC.PKG_KEY = PKG.PKG_KEY AND OBJ.OBJ_NAME = 'AD User'  AND USR.USR_LOGIN IN ('A1634940','A6005065','A1623725','A1611604','A1591053','A1569215','A1558887','A1558423','A1549982','A1541359','A557950','A1491378','A1491397','A1472752','A1471250','A1450723','A1409687','A458016','S301890','A1138077');
+
+
+select count(*)   from user_provisioning_attrs where policy_eval_needed ='1' and policy_eval_in_progress ='0' 
+and usr_key in (select usr_key from usr where usr_status ='Active');
+
+
+UPDATE USER_PROVISIONING_ATTRS SET POLICY_EVAL_NEEDED='1',POLICY_EVAL_IN_PROGRESS=0,UPDATE_DATE=SYSDATE WHERE 
+USR_KEY IN (SELECT USR_KEY FROM USR WHERE USR_LOGIN IN ('A1356928'));
+
+eval job name
+Execute " BBY Custom Access Policy Evaluation Task For Active Users"
+
+To empty eval queue
+
+UPDATE USER_PROVISIONING_ATTRS 
+SET POLICY_EVAL_NEEDED='0',POLICY_EVAL_IN_PROGRESS=0
+WHERE USR_KEY IN (select usr_key  from user_provisioning_attrs 
+where  policy_eval_needed =1 and usr_key in (select usr_key from usr where usr_status in ( 'Active','LOA')));
+
+select * from user_provisioning_attrs;
+
+select * from usr where usr_login =('A1471250');
+
+
+ iProcurement Oracle application:  
+ =================================
+ 
+OracleEBS account should be provisioned
+    2. Entilements Tab -> Internet Procurement group should be provisioned
+    User status - Active, Password sync
+    if all proper, transfer to procurement team
+open oracleEBS resource history , last password related task should be completed, same time should be there in helpdesk sync also
+L2-ORACLE-OIC-IT-US
+
+if in oracle ebs recent pwd update task got rejected ask user to reset the password again saying your password is not updated in oracle ebs pls reset again
+
+We could see password has expired for the user, login to https://bbyoig.na.bestbuy.com/password-portal to reset ,use Forgot/Expired Password link which will give further options as listed below to reset the password
+a)    Password Reset Pin + Time Based Passcode
+b)    Security QA
+c)    Current Expired Password + Time Based Passcode
+d)    Manager Approval
+(or) Kindly contact helpdesk 
+
+
+
+pw expired
+Hi,
+We could see password has expired for the user, login to https://bbyoig.na.bestbuy.com/password-portal to reset ,use Forgot/Expired Password link which will give further options as listed below to reset the password
+a) Password Reset Pin + Time Based Passcode
+b) Security QA
+c) Current Expired Password + Time Based Passcode
+d) Manager Approval
+or Contact helpdesk to reset password
+
+Regards,
+OIG Support.
+
+Mobile Number update:-
+Hi,
+
+Kindly follow any of the three below mentioned options to register your mobile number :
+
+1. Inform your Manager to update your number in the Manager Portal by login to following URL : https://bbyoig.na.bestbuy.com/managerportal/index.jsp
+OR
+2. Follow the below steps to submit the request for Mobile Phone Number in the right category.
+a) Go to https://bbyoigwebui.na.bestbuy.com/
+b) Enter your Best Buy A-id and password. Click "Log In"
+c) Click on "Request for Self" and Type "Mobile Number Registration" under Request access.
+d) Click "Add to Cart" and then "Checkout".
+e) Under the Details tab, enter your mobile number into the "Mobile Phone Number" field. Click "Submit".
+OR
+3. Follow the below steps to update Mobile Phone Number in the IAM password portal.
+a) Login to https://bbyoig.na.bestbuy.com/password-portal
+b) Click on "Register / Update your Mobile Number" and update your mobile number. Click "Submit".
+
+
+
+Let us know if you need further assistance.
+Regards,
+OIG Support
+
+password Policy
+
+Passwords need to be a random password and not common dictionary words. It should not contain BestBuy, BBY etc. and numbers shouldn’t be consecutive ones ( Abcd$1234 is not a valid password as AD won’t allow 1234).
+
+
+
+INC10027330
+INC10027444
+INC10027486
+INC10027738
+
+Active Directory NA User Target Recon_1
+
+
+[7:37 AM] Ramesh, Sridevi-CW
+
+Please follow the below steps to update reportee(s) mobile number using Manager Portal.
+1. Log onto to Manager portal by clicking on this link: https://bbyoig.na.bestbuy.com/managerportal/index.jsp
+2. Select the reportee whose number you would like to update from the shared list in above table.
+3. Enter their mobile number when prompted and click “Update.
+4. Click “Yes”on the next screen if you would like to proceed with the mobile number update or click “Cancel” to re-enter the mobile number.
+5. The updated mobile number of the reportee is shown in the Phone Number column. When finished, you can log out using the button in the right hand corner.
+
+After successful mobile number update, instruct new reportee(s) to install SecureAuth Mobile app from available app store and perform password reset through that app.
+
+[7:37 AM] Ramesh, Sridevi-CW
+as manager to try this
+
+[7:37 AM] Ramesh, Sridevi-CW
+if issue ask them 2 raise incident and assign 2 our queue
+
+
+Workday L2-OPS-WORKDAY-IT-US
+
+Hi team,
+Please let us know if the above mentioned impacted users are active in HR,
+If active, please provide us the effective start date.
+
+Regards,
+OIG Support.
+INC10091535
+
+
+end date not updated
+INC10093591 - A1283156
+INC10083206 - A1591681
+
+
+
+DSEE Server~ou=People,dc=bestbuy,dc=com
+
+
+Sample queries
+------------------------
+select usr_Key,usr_emp_no from usr where usr_login='Manager';
+select usr_change_pwd_at_next_logon,usr_udf_isuserresetqa,usr_manager_key,usr_udf_employeemanager from usr where usr_login in ('impactedusr');
+update usr set usr_manager_key='26486',usr_udf_employeemanager='718367' where usr_login=('A1566529');
+
+select USR_CHANGE_PWD_AT_NEXT_LOGON,USR_UDF_NEWHIREFLAG from USR
+
+users with no oud accounts
+INC10104660
+
+Dhayakar INC
+INC10094507
+INC10107367
+INC10112623
+
+INC10112115
+A3003348
+
+
+Reducing the priority due to SLA Concerns
+
+INC10141579
+
+A1291900
+
+pwd reset mechanism table is showing no recent entry Vineeth
+
+but BBY_PWRP_AUDIT_DETAILS table is showing Password Reset done successfully by A1291900  at 19-OCT-22 17:02:51
+
+and OUD account got provisioned on 20th
+
+as the pw is not in sync user must reset his pw right vineeth
+
+===================================================================
+user out of BBY Network:-
+------------------------------
+Brayan called in for password reset and
+Issue: Brayan was trying to login to Windows with the temporary password provided by HelpDesk. Temporary password wouldn't have sync'd to Windows as user was not connected to VPN
+Resolution: Made Brayan login to Cisco VPN by clicking the icon from right bottom corner of the Windows login screen with the HelpDesk provided password. This forced the password reset through VPN (even though it would show authentication failed, password would be updated in AD). After couple of minutes when the password got syncd in all AD Domain controllers, Brayan was again made to login to Cisco VPN from Windows login page and once successfully connected to VPN, he could log into to Windows.
+===================================================================
+
+===================================================================
+Leam Account, user unable to login to Leam:
+------------------------------------------------------------
+Login to LEAM and see if user is present
+Else run 
+LDAP ODSP Connector Trusted User Filter Reconciliation
+
+Hi,
+we have updated user profile, Kindly validate now.
+Try logging in to leam and create AD account
+The attributes needed are AID, Password, employee id only, Rest all fields to be kept blank.
+Let us know if you still face any issues.
+
+Regards,
+IG Support.
+
+LDAP Connector User Filter Search Reconciliation
+====================================================================
+
+L2-ASM-EMPLOYEEAPP-IT-GLB
+for bby connect 
+
+for outlook its MCS INC10372460
+
+=====================================================================
+Vendor Password reset:-
+----------------------------------
+Hi , 
+
+Please follow the below steps to reset your password, 
+1.Click on the "Forgot Password" link. (https://access.bestbuy.com/vportal ) 
+2.Provide your registered email id in "Forgot Password" window. 
+3.A link will be email-ed to your registered e-mail to reset the password. Reset your password by clicking on the link[Note: Password must not be any of the last 6 passwords] . 
+4.After resetting, verify your new credential in a new Incognito window(chrome) or in a new browser session after clearing all the system cache & browser history. 
+Please let us know if any further assistance is required from our end. 
+ 
+Regards, 
+VendorIdentitySupport
+
+Please follow the below steps to reset your password, 
+1. Reset your password by clicking on the link https://access.bestbuy.com/vendorportal/ResetPassword.html?uniqueId=67426096643098c6cb7c72afe44b4283df3d915afcb1d0674b1cc55a44509a7f [Note: Password must not be any of the last 6 passwords] . 
+2.After resetting, verify your new credential in a new Incognito window(chrome) or in a new browser session after clearing all the system cache & browser history. 
+Please let us know if any further assistance is required from our end. 
+ 
+Regards, 
+Vendor Identity Support
+====================================================================
+
+====================================================================
+Rehire Fix:
+-----------------------------
+Note: Refresh Identity Cube - ll Identities Job should not be running during this Fix
+as it will disable users D accounts too
+1.Task: BBY Update Rapid Setup Attribute Task
+Put impacted users in filter >> Run Task
+Eg: users,A1250398:A1600929
+2.Rule: WDBulkAggregation
+Put Empnos List in Run >> Run rule
+Eg: String empIDs="1302250,1363873";
+3.Run 'Single Identity Refresh Job'
+4.Update newhireFlag nd nextLogonFlag for users
+update usr set usr_udf_newhireflag = 3,usr_change_pwd_at_next_logon = 1  where usr_login in ('');
+
+if not in target 
+<entry key="isNewHire" value="Yes"/>
+<entry key="rapidSetupProcessingState" value="needed"/>
+=====================================================================
+ 
+
+indha tags user oda xml la check pani update pantu, then have run refresh job by unchecking 'Refresh identity attributes'
+
+ 
+
+this will trigger Joiner event, so account will be created newly
+
+Debug
+identity -- A11111111 -
+
+
+select l.name,
+CASE 
+    WHEN l.NEEDS_REFRESH = '1' 
+        THEN 'Not Refreshed yet'
+    ELSE 'Refreshed'
+END
+AS NEEDS_REFRESH,l.EXTENDED7 AS Position ,l.EXTENDED5 AS Status,
+DATE '1970-01-01' + ( 1 / 24 / 60 / 60 / 1000) * l.created AS created,
+DATE '1970-01-01' + ( 1 / 24 / 60 / 60 / 1000) * l.modified AS modified,
+l.effective_end_date
+from spt_identity l 
+where l.NEEDS_REFRESH = 1
+and l.name in()
+order by l.effective_end_date desc
+
+
+
+AD OUD Dual Account:
+=========================================================
+
+SELECT APP_INSTANCE.APP_INSTANCE_NAME, OBJ.OBJ_NAME, USR.USR_STATUS, USR.USR_LOGIN, USR.USR_KEY, OBJ.OBJ_KEY,
+OIU.ACCOUNT_TYPE, PKG.PKG_KEY, PKG.PKG_NAME, OST.OST_STATUS, ORC.ORC_KEY, USR.USR_CREATE, OIU.OIU_KEY
+FROM OST, OIU, ORC, USR, OBJ, PKG, APP_INSTANCE
+WHERE OIU.OST_KEY = OST.OST_KEY AND OIU.ORC_KEY = ORC.ORC_KEY AND OIU.APP_INSTANCE_KEY = APP_INSTANCE.APP_INSTANCE_KEY
+AND ORC.USR_KEY = USR.USR_KEY AND OST.OBJ_KEY = OBJ.OBJ_KEY AND ORC.PKG_KEY = PKG.PKG_KEY AND OBJ.OBJ_NAME = 'AD User'  AND USR.USR_LOGIN IN ('A103328');
+
+UPDATE OIU SET OST_KEY = 2287 WHERE ORC_KEY in ('649753');
+
+commit;
+
+SELECT APP_INSTANCE.APP_INSTANCE_NAME, OBJ.OBJ_NAME, USR.USR_STATUS,USR.USR_LOGIN, USR.USR_KEY, OBJ.OBJ_KEY,
+OIU.ACCOUNT_TYPE, PKG.PKG_KEY, PKG.PKG_NAME, OST.OST_STATUS, ORC.ORC_KEY, USR.USR_CREATE, OIU.OIU_KEY
+FROM OST, OIU, ORC, USR, OBJ, PKG, APP_INSTANCE
+WHERE OIU.OST_KEY = OST.OST_KEY AND OIU.ORC_KEY = ORC.ORC_KEY AND OIU.APP_INSTANCE_KEY = APP_INSTANCE.APP_INSTANCE_KEY
+AND ORC.USR_KEY = USR.USR_KEY AND OST.OBJ_KEY = OBJ.OBJ_KEY AND ORC.PKG_KEY = PKG.PKG_KEY AND OBJ.OBJ_NAME = 'LDAP User'
+--and ost.ost_status in ('Enabled','Provisioned')
+AND USR.USR_LOGIN IN ('A1285025');

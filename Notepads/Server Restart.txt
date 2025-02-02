@@ -1,0 +1,232 @@
+remc applications
+https://remc.bestbuy.com/Applications
+
+https://pdl01fbhap011.bbydmz.com:7002/console
+
+
+Flush current running  log files:-
+echo -n > oim_server1.out
+
+Servers Restart:-
+===============
+
+
+https://puam.na.bestbuy.com/passwordvault
+
+To tail logs
+logs
+cd oim_server1/logs
+tail -f oim_server1.out
+
+
+
+for starting connector servers:
+(pdl01ggmap01a,pdl01ggmap01b)
+cd /opt/oracle/oim_connector_server/bin
+./connectorserver.sh /start
+
+vendor oim
+/opt/oracle/Middleware/user_projects/domains/OIMDomain/servers/soa_server2/logsdf -lh - to check disk space
+For disk space
+
+If Adminserver PDL01GGMAP01A
+logs
+cd Adminserver/logs
+ls -ltr - to listUNIX patching:
+
+Connector :
+cd /opt/oracle/oim_connector_server/bin
+./connectorserver.sh /stop
+cd /opt/oracle/PL/oim_connector_server/bin/
+(V PL) cd /opt/oracle/connector_server_java-1.4.0/bin/
+ls -larh
+mv .pid .pid_030421
+cd bin
+./connectorserver.sh /start
+
+Admin Servers
+cd /opt/oracle/Middleware/user_projects/domains/oim_domain/bin
+(OIG PL)cd /opt/oracle/PL/Middleware/user_projects/domains/oim_domain/bin/
+(V PL) cd /opt/oracle/Middleware/user_projects/domains/OIMDomain/bin/
+nohup ./startWebLogic.sh &
+ctrl+c
+tail -f nohup.out
+
+Node manager
+cd /opt/oracle/Middleware/wlserver_10.3/server/bin/
+cd /opt/oracle/PL/Middleware/wlserver_10.3/server/bin
+
+/opt/oracle/Middleware/wlserver_10.3/server/lib/weblogic.policy
+nohup ./startNodeManager.sh & >>nodemanager.out &
+ctrl+c
+ps -ef|grep NodeManager
+ 
+
+memcached -h
+ps -ef|grep -i Memcachedohs
+
+ohs
+===
+cd /opt/oracle/Middleware/Oracle_WT1/instances/instance7/bin/
+(pl)cd /opt/oracle/PL/Middleware/Oracle_WT1/instances/instance1/bin/
+./opmnctl status
+cd /opt/oracle/oim/Middleware/Oracle_WT1/instances/oim_instance/bin/
+
+Sticky
+front end servers (WB)
+cd /opt/oracle/Persistent/OIMWEBUI/Core
+(pl):-cd /opt/oracle/PL/Persistent/OIMWEBUI/Core
+nohup node sticky.js &
+
+scripts:-
+cd /opt/oracle/scripts/
+./ProcessCount_Mem_CPU_Script.sh &
+./LogErrorMonitor_OIMServer1.sh &
+
+Process Count
+ps -u prodoim -L | wc -l
+      (Max Process count: 4096 WB servers, 2047 in AP servers)
+	  
+for starting connector servers:(pdl01ggmap01a,pdl01ggmap01b)
+cd /opt/oracle/oim_connector_servers/bin
+./connectorserver.sh /start
+ps -ef|grep -i connector
+
+Archived files:-
+cd /logs/logs_archived/
+
+Disk space
+tar -cvpzf oim_server1.out00005.tar.gz oim_server1.out00005
+
+tar -cvpzf oim_server1.out00037.tar.gz oim_server1.out00037
+mv oim_server8.out00025.tar.gz /logs/logs_archived/oimlogs/
+rm oim_server8.out00025
+
+
+cp /dev/null oim_server1.out00055
+
+du -hs * |sort -rh |head -5
+
+SWAP: free -t -m | awk '/Swap:/ { printf("%.2f%"), $3/$2*100 }' | cut -f 1 -d "."
+MEM: free -t | awk 'NR == 2 {printf("%.2f%"), $3/$2*100}' | cut -f 1 -d "."
+Disk: df -lh
+
+To check logs in Admin server:
+pdl01ggmap01a
+two logs path that have log files
+1. Admin log
+2. oimlog
+>logs
+>cd AdminServer/logs
+>rm oim_domain.log4* [leave few latest files and remove others, confirm with others before rmeoving]
+to check in oimlogs
+now you are in Admin logs path, go two steps back
+>cd ../../oim_server1/logs
+use our command to check log files that consume more diskspace
+>du -hs * |sort -rh |head -5
+>tar -cvpzf oim_server1.out00345.tar.gz oim_server1.out00345
+>mv oim_server1.out00345.tar.gz /logs/logs_archived/oimlogs/
+
+df -lh      gives disk size
+logs > cd oim(tab)
+
+ls -lrth
+
+rm for removing and *
+
+rm oim_server1.out00345
+
+mv cache cache_bkp_11dec23
+mv tmp tmp_bkp_11dec23
+mv stage stage_bkp_11dec23
+
+
+CHG0025689 [CTASK0045728]
+
+drl02fbhap007
+drl02fbhap005
+
+
+CHG0025691  CTASK0045742
+
+drl02ggmap01d
+drl02ggmap02d
+drl02ggmap03d
+drl02ggmap04d
+drl02ggmwb01d
+drl02ggmwb02d
+drl02ggmwb03d
+drl02ggmwb04d
+
+drl02fbhap001
+drl02fbhap003
+drl02fbhwb001
+drl02fbhwb003
+
+
+DRL02GGMAP01D- connector, Node manager
+DRL02GGMAP02D
+DRL02GGMAP03D
+DRL02GGMAP04D
+
+DRL02GGMWB01D-admin,manager,oim,soa,ui -- ohs sticky , node manager............memcache
+DRL02GGMWB02D-memcache
+DRL02GGMWB03D-memcache
+DRL02GGMWB04D-memcache
+
+
+DRL02FBHAP001  Admin,oim,soa,             connector, Node manager
+DRL02FBHAP003 oim,ui, nodemanager
+DRL02FBHWB001-ohs not running
+DRL02FBHWB003-ohs not running
+
+
+OIG PL Activity:-
+CHG0025689[CTASK0045728] FY23 R6 Security Vulnerability Fix Deployment on DR Vendor Oracle Identity Manager 02 Servers-IIP
+CHG0025691[CTASK0045742] FY23 R6 Security Vulnerability Fix Deployment on OIGvendor directory-PLDR-19 Servers-IIP
+
+
+du -hs * |sort -rh |head -5
+
+Disk Clearance:
+
+find -name "oim_domain.log*" -mmin +120 -type f | zip oim_domain_logs23022023.zip -@
+find -name "oim_domain.log*" -mmin +120 -type f -exec rm {} \; 
+
+find -name "soa_server1.out*" -mmin +360 -type f | zip Leam_SOA_out_logs.zip -@
+find -name "soa_server1.out*" -mmin +360 -type f -exec rm {} \; 
+
+find -name "oim_server1.log*" -mmin +360 -type f | zip oim_logs30012023.zip -@
+find -name "oim_server1.log*" -mmin +360 -type f -exec rm {} \; 
+
+find -name "idaas-oim-api.log.202*" -mmin +1440 -type f | zip idaas_logs30012023.zip -@
+find -name "idaas-oim-api.log.202*" -mmin +1440 -type f -exec rm {} \;
+
+find -name "ui_server4.log*" -mmin +360 -type f | zip ui_logs30012023.zip -@
+find -name "oim_server4.log*" -mmin +360 -type f -exec rm {} \; 
+
+
+
+CHG0054247
+
+drl02ggmap01d
+drl02ggmap02d
+drl02ggmap03d
+drl02ggmap04d
+
+drl02ggmwb01d
+drl02ggmwb02d
+drl02ggmwb03d
+drl02ggmwb04d
+
+drl02fbhap001
+drl02fbhap003
+drl02fbhwb001
+drl02fbhwb003
+
+
+drl02fbhap002-soa2,nm,
+drl02fbhap004
+drl02fbhap006
+drl02fbhwb002
+drl02fbhwb004

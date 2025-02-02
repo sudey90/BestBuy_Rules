@@ -1,0 +1,52 @@
+OIG PL(Prod Like) Details
+---------------------------------
+Passowrd portal
+--------------------------
+https://bbyoigpl.na.bestbuy.com/password-portal/
+https://bbyoigpl.na.bestbuy.com/passwordResetPortal/ 
+Access request portal
+----------------------------
+https://bbyoigplwebui.na.bestbuy.com
+ 
+http://DRL02GGMWB01D.na.bestbuy.com:14000/identity/
+http://DRL02GGMWB02D.na.bestbuy.com:14000/identity/
+http://DRL02GGMWB03D.na.bestbuy.com:14000/identity/
+http://DRL02GGMWB04D.na.bestbuy.com:14000/identity/
+http://DRL02GGMAP01D.na.bestbuy.com:14000/identity/
+http://DRL02GGMAP02D.na.bestbuy.com:14000/identity/
+http://DRL02GGMAP03D.na.bestbuy.com:14000/identity/
+http://DRL02GGMAP04D.na.bestbuy.com:14000/identity/
+ 
+=============================================================
+
+Prod Details
+-------------
+Passowrd portal
+--------------------------
+https://bbyoig.na.bestbuy.com/password-portal/
+https://bbyoig.na.bestbuy.com/passwordResetPortal/
+Access request portal
+--------------------------
+https://bbyoigwebui.na.bestbuy.com
+
+OIG servers
+ 
+Admin server
+http://PDL01GGMAP01A.na.bestbuy.com:7001/console
+ 
+ 
+Identity and sysadmin consoles:
+http://PDL01GGMAP01A.na.bestbuy.com:14000/identity/
+http://PDL01GGMAP01B.na.bestbuy.com:14000/identity/
+http://PDL01GGMAP02A.na.bestbuy.com:14000/identity/
+http://PDL01GGMAP02B.na.bestbuy.com:14000/identity/
+http://PDL01GGMWB01A.na.bestbuy.com:14000/identity/
+http://PDL01GGMWB02A.na.bestbuy.com:14000/identity/
+http://PDL01GGMWB01B.na.bestbuy.com:14000/identity/
+http://PDL01GGMWB02B.na.bestbuy.com:14000/identity/
+ 
+=======================================================================================================
+
+Test Details
+---------------
+Server: https://ptl01ggmap01c.na.bestbuy.com:14000/identity/

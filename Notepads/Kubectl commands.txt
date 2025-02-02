@@ -1,0 +1,55 @@
+Kubectl control command:
+1. Command to copy file from local to POD location.
+	kubectl cp logging.properties sailpoint-task-corp-65f54f5df9-7cbqg:/opt/tomcat/conf
+kubectl cp BBY_HR_Workers_Termed_in_Date_Range_and_Eff_Date_Less_than_Completion_Date_(for_SailPoint_Auditing).csv sailpoint-task-corp-545f4b66-74gtn:/opt/tomcat/sp
+	/opt/tomcat/sp/logs/sailpoint.log
+	/opt/tomcat/logs/catalina.out
+2. Command to switch kube profiles
+	Get the context from config file for kubectl.
+	Run the following command to the context between environments
+		kubectl config use-context eks-t0-test [Connect to Test environment]
+		kubectl config use-context eks-t0-stage [Connect to Stage environment]
+		kubectl config use-context eks-t0-east (or) eks-t0-west [Connect to PROD environment]
+3. Command to launch shell session of pod
+	kubectl exec -it sailpoint-task-corp-545f4b66-74gtn -- /bin/bash
+	kubectl exec -it sailpoint-task-corp-58d774b949-bd4gh -- /bin/bash
+4. Command to port-forward using kubectl
+	kubectl port-forward sailpoint-ui-corp-6f8d9c9954-244zn 9999:8443
+5. Command to test FW opening alternate to telnet
+	Net cat command:
+		nc -vz <hostname> <port>
+		nc -vz pe-non-db-pcms-rds.cy1rv8p00c3e.us-east-1.rds.amazonaws.com 1521
+		netstat -anpe | grep "1234" | grep "LISTEN"
+		Curl -kv <ip>:<port> or Curl -kv <host>:<port>
+		curl -kv vdlocdb03.na.bestbuy.com:50000
+
+6. Command to get logs using kubectl
+	kubectl logs sailpoint-task-corp-96678569-s5td7 | grep "Total Workers fetched"
+7.Command to delete pod
+	kubectl delete pod <pod_name>
+8.Unix Command to find large files
+	df -hPT /tmp/
+9. Unix Command for Swap information
+	cat /proc/swaps - To find swap space
+	Free - To find swap usage
+10. To get node details -- IP address
+	kubectl describe pods
+	kubectl get pods -o wide
+	kubectl get pods --all-namespaces  -o wide
+11. To access kubectl using SSH
+	Test environment:
+		ssh -o StrictHostKeyChecking=false -i ~/.ssh/id_ed25519 a1350485@te-ek0-bastion-nlb-ia-e5530bec66a580c9.elb.us-east-1.amazonaws.com
+		Test alias: t0-test.na.bestbuy.com.  The other envs will follow this pattern (t0-stage.na.bestbuy.com, etc.)
+ 
+12. To recycle Kubernetes nodes
+		kubectl rollout restart deployment sailpoint-task-corp
+		kubectl rollout restart deployment sailpoint-ui-corp
+13. Command to copy file from POD location to local
+	kubectl cp sailpoint-task-corp-6f4b7ddb86-6rj7n:/opt/tomcat/conf/logging.properties ./logging.properties
+14. Find the host details
+	cat /etc/hosts
+15.Delete fargate instance
+	kubectl config set-context --current --namespace=identity-ent-batch
+        kubectl get jobs
+        kubectl delete job <job_name> eg  kubectl delete job sailpoint-task-fg-28610340
+        kubectl config set-context --current --namespace=sailpoint-corp
