@@ -8,6 +8,7 @@ BestBuy Web UI: https://bbyoigwebui.na.bestbuy.com/
 ServiceNow URL: https://bestbuy.service-now.com/
 BestBuy Crowd Control: https://code.bestbuy.com/crowdcontrol/
 Wipro Service Now: https://wiprocio.service-now.com/sp
+                   https://wiprocio.service-now.com.mcas.ms/sp?id=wipro2
 Wipro Outlook:https://outlook.office365.com/owa/wipro.com
 
 Identity Self Service PL env: https://drl02ggmwb01d:14001/identity/ (a3076068_PL_ADMIN)
